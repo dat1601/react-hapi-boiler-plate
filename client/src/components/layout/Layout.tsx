@@ -7,10 +7,10 @@ function Layout() {
             <nav>
                 <ul className="flex w-full gap-5">
                     <li className="px-3 hover:bg-sky-700">
-                        <Link to="/home">Home</Link>
+                        <Link to="/ui/home">Home</Link>
                     </li>
                     <li className="px-3 hover:bg-sky-700">
-                        <Link to="/about">About</Link>
+                        <Link to="/ui/about">About</Link>
                     </li>
                 </ul>
             </nav>

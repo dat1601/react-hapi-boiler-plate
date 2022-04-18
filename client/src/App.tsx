@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from "./pages/Home";
 import Layout from "./components/layout/Layout";
 import About from "./pages/About";
+import Nomatch from "./pages/Nomatch";
 
 function App() {
   return (
@@ -12,13 +13,14 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
 
-        <Router basename={process.env.PUBLIC_URL}>
+        <Router>
           <Routes>
-            <Route element={<Layout />}>
-              <Route path="/home" element={<Home />} />
-              <Route path="/about" element={<About />} />
+            <Route path={"/ui/"} element={ <Layout /> } >
+              <Route path="home" element={ <Home /> } />
+              <Route path="about" element={ <About /> } />
+              <Route path="" element={ <Navigate to={"/ui/home"} replace /> } />
             </Route>
-            <Route path="/" element={<Navigate to={"/home"} replace/>}/>
+            <Route path="*" element={ <Nomatch /> } />
           </Routes>
         </Router>
 
